@@ -44,12 +44,6 @@ php yii schema/up <<< "yes"
 php yii seed/up <<< "yes"
 php yii db/import <<< "yes"
 
-info "Truncate System Configuration table"
-mysql -uroot -padminuser TRUNCATE TABLE system_configuration
-
-info "Import SQL data dump"
-mysql -uroot -padminuser yii2advanced < /var/www/html/erec/console/migrations/sqldump/dbexport.sql
-
 info "CPS"
 info "Install project dependencies"
 cd /var/www/html/cps
@@ -61,11 +55,9 @@ info "Init project"
 info "Apply migrations"
 php yii schema/up <<< "yes"
 php yii seed/up <<< "yes"
-php yii db/import <<< "yes"
 
 info "Create bash-aliases 'erec' and 'cps' for vagrant user"
-echo 'alias erec="cd /var/www/html/erec"' | tee /home/vagrant/.bash_aliases
-echo 'alias cps="cd /var/www/html/cps"' | tee /home/vagrant/.bash_aliases
+echo 'alias erec="cd /var/www/html/erec" alias cps="cd /var/www/html/cps"' | tee /home/vagrant/.bash_aliases
 
 info "Enabling colorized prompt for guest console"
 sed -i "s/#force_color_prompt=yes/force_color_prompt=yes/" /home/vagrant/.bashrc

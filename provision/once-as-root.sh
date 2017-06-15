@@ -74,15 +74,15 @@ sed -i 's/user www-data/user vagrant/g' /etc/nginx/nginx.conf
 echo "Done!"
 
 info "Enabling site configuration"
-ln -s /var/www/html/erec/vagrant/nginx/erec.conf /etc/nginx/sites-enabled/erec.conf
-ln -s /var/www/html/cps/vagrant/nginx/cps.conf /etc/nginx/sites-enabled/cps.conf
+ln -s /var/www/html/erec/vagrant/nginx/app.conf /etc/nginx/sites-enabled/erec.conf
+ln -s /var/www/html/cps/vagrant/nginx/app.conf /etc/nginx/sites-enabled/cps.conf
 echo "Done!"
 
 info "Initailize databases for MySQL"
-mysql -uroot <<< "CREATE DATABASE IF NOT EXISTS yii2advanced"
-mysql -uroot <<< "CREATE DATABASE IF NOT EXISTS yii2advanced_test"
-mysql -uroot <<< "CREATE DATABASE IF NOT EXISTS yii2advanced_cps"
-mysql -uroot <<< "CREATE DATABASE IF NOT EXISTS yii2advanced_cps_test"
+mysql -uroot <<< "CREATE DATABASE IF NOT EXISTS erec"
+mysql -uroot <<< "CREATE DATABASE IF NOT EXISTS erec_test"
+mysql -uroot <<< "CREATE DATABASE IF NOT EXISTS cps"
+mysql -uroot <<< "CREATE DATABASE IF NOT EXISTS cps_test"
 
 info "Install composer"
 curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
