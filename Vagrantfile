@@ -5,7 +5,7 @@ domains = {
   frontend: 'erec.dev',
   backend:  'erec-backend.dev',
   cpsfrontend: 'cps.dev',
-  cpsbackend: 'cps-backend.dev'
+  cpsbackend: 'cps-backend.dev',
   phpmyadmin: 'phpMyAdmin'
 }
 
