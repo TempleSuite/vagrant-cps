@@ -6,6 +6,7 @@ domains = {
   backend:  'erec-backend.dev',
   cpsfrontend: 'cps.dev',
   cpsbackend: 'cps-backend.dev'
+  phpmyadmin: 'phpMyAdmin'
 }
 
 config = {

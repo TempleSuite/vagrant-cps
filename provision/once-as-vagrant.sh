@@ -53,7 +53,7 @@ info "Init project"
 ./init --env=Development --overwrite=n
 
 info "Apply migrations"
-php yii migrate <<< "yes"
+php yii migrate/up <<< "yes"
 
 info "Create bash-aliases 'erec' and 'cps' for vagrant user"
 echo 'alias erec="cd /var/www/html/erec" alias cps="cd /var/www/html/cps"' | tee /home/vagrant/.bash_aliases
