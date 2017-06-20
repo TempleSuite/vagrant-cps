@@ -1,15 +1,13 @@
-# vagrant
-
 # CONFIG
 
-# Go to config/vagrant-local-example.yml and copy it to a file named config/vagrant-local.yml
-# This file will be your configuration.
+Go to config/vagrant-local-example.yml and copy it to a file named config/vagrant-local.yml
+This file will be your configuration.
 
-# At the top, enter your own personal GitHub token.
+At the top, enter your own personal GitHub token.
 
-# Make sure the machine_name is "mais"
+Make sure the machine_name is "mais"
 
-# Make sure your path_to_erec and path_to_cps are absolute urls, for instance mine is ~/code/erec-yii2.
+Make sure your path_to_erec and path_to_cps are absolute urls, for instance mine is ~/code/erec-yii2.
 
 # SETUP
 
