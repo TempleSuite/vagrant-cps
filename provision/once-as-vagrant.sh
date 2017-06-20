@@ -69,12 +69,6 @@ mv /var/www/html/phpMyAdmin/phpMyAdmin-4.6.4-english/* /var/www/html/phpMyAdmin
 rm -R /var/www/html/phpMyAdmin/phpMyAdmin-4.6.4-english
 sudo chown -R vagrant:vagrant /var/www/html/phpMyAdmin
 
-sudo mkdir /var/www/html/cpsPhpMyAdmin
-sudo chown vagrant:vagrant /var/www/html/cpsPhpMyAdmin
-tar -xvzf /var/www/html/erec/vagrant/phpMyAdmin/phpMyAdmin-4.6.4-english.tar.gz -C /var/www/html/cpsPhpMyAdmin
-mv /var/www/html/phpMyAdmin/phpMyAdmin-4.6.4-english/* /var/www/html/cpsPhpMyAdmin
-rm -R /var/www/html/phpMyAdmin/phpMyAdmin-4.6.4-english
-sudo chown -R vagrant:vagrant /var/www/html/cpsPhpMyAdmin
 sudo service nginx restart
 
 
