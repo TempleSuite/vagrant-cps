@@ -88,5 +88,5 @@ info "Install composer"
 curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 #info "Install Ruby-SASS"
-#sudo apt-get -y install ruby2.0 ruby2.0-dev
-#sudo gem2.0 install sass
+sudo apt-get -y install ruby2.0 ruby2.0-dev
+sudo gem2.0 install sass
