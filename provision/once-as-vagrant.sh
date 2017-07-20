@@ -42,7 +42,7 @@ info "Init project"
 info "Apply migrations"
 php yii schema/up <<< "yes"
 php yii seed/up <<< "yes"
-php yii db/import prod <<< "yes"
+php yii db/import dev <<< "yes"
 
 info "CPS"
 info "Install project dependencies"
