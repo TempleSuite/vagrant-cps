@@ -31,6 +31,10 @@ info "Install codeception"
 composer global require "codeception/codeception=2.0.*" "codeception/specify=*" "codeception/verify=*" --no-progress
 echo 'export PATH=/home/vagrant/.config/composer/vendor/bin:$PATH' | tee -a /home/vagrant/.profile
 
+info "Cloning erec project from github"
+git clone https://${github_token}@github.com/TempleSuite/erec-yii2.git /var/www/html/erec
+info "Done!"
+
 info "EREC"
 info "Install project dependencies"
 cd /var/www/html/erec
@@ -43,6 +47,11 @@ info "Apply migrations"
 php yii schema/up <<< "yes"
 php yii seed/up <<< "yes"
 php yii db/import dev <<< "yes"
+
+
+info "Cloning CPS project from github"
+git clone https://${github_token}@github.com/TempleSuite/cps-yii2.git /var/www/html/cps
+info "Done!"
 
 info "CPS"
 info "Install project dependencies"
@@ -70,5 +79,3 @@ rm -R /var/www/html/phpMyAdmin/phpMyAdmin-4.6.4-english
 sudo chown -R vagrant:vagrant /var/www/html/phpMyAdmin
 
 sudo service nginx restart
-
-
