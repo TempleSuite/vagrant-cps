@@ -44,7 +44,7 @@ info "Init project"
 ./init --env=Development --overwrite=n
 
 info "import dev database"
-mysql -uroot -padminuser erec <<< /var/www/html/erec/console/migrations/sqldump/dev_import.sql
+mysql -uroot -padminuser erec < /var/www/html/erec/console/migrations/sqldump/dev_import.sql
 
 info "Apply migrations"
 php yii schema/up <<< "yes"
