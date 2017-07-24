@@ -40,6 +40,19 @@ info "Install project dependencies"
 cd /var/www/html/erec
 composer --no-progress --prefer-dist install
 
+info "create .env file"
+touch /var/www/html/erec/.env
+echo "DB_NAME=erec
+DB_USERNAME=root
+DB_PASSWORD=adminuser
+DB_HOST=localhost
+
+ALIAS_EREC=erec.dev
+YII_ENV=dev
+YII_DEBUG=true
+
+BUGSNAG_API_KEY=a8b6d1deb54fb7a74a7a99ee19c17c1d" > /var/www/html/erec/.env
+
 info "Init project"
 ./init --env=Development --overwrite=n
 
