@@ -43,13 +43,13 @@ composer --no-progress --prefer-dist install
 info "Init project"
 ./init --env=Development --overwrite=n
 
-info "import database"
+info "import dev database"
 mysql -uroot -padminuser erec <<< /var/www/html/erec/console/migrations/sqldump/dev_import.sql
 
 info "Apply migrations"
 php yii schema/up <<< "yes"
 php yii seed/up <<< "yes"
-php yii db/import dev <<< "yes"
+php yii db/import dev <<< "no"
 
 
 info "Cloning CPS project from github"
