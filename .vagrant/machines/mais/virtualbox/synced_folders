@@ -1,1 +1,0 @@
-{"virtualbox":{"/var/www/html/erec":{"owner":"vagrant","group":"vagrant","guestpath":"/var/www/html/erec","hostpath":"/home/jeffery/code/erec-yii2","disabled":false,"__vagrantfile":true},"/var/www/html/cps":{"owner":"vagrant","group":"vagrant","guestpath":"/var/www/html/cps","hostpath":"/home/jeffery/code/cps-yii2","disabled":false,"__vagrantfile":true}}}
