@@ -59,6 +59,10 @@ info "Init project"
 info "import dev database"
 mysql -uroot -padminuser erec < /var/www/html/erec/console/migrations/sqldump/dev_import.sql
 
+info"Down the database before running migrations up"
+php yii seed/down <<< "yes"
+php yii schema/down <<< "yes"
+
 info "Apply migrations"
 php yii schema/up <<< "yes"
 php yii seed/up <<< "yes"
