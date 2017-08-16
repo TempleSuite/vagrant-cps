@@ -1,1 +1,9 @@
 .vagrant\
+
+.vagrant/machines/mais/virtualbox/synced_folders
+.vagrant/machines/mais/virtualbox/private_key
+.vagrant/machines/mais/virtualbox/id
+.vagrant/machines/mais/virtualbox/index_uuid
+.vagrant/machines/mais/virtualbox/creator_uid
+.vagrant/machines/mais/virtualbox/action_set_name
+.vagrant/machines/mais/virtualbox/action_provision
