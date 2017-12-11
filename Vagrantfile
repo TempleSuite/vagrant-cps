@@ -2,10 +2,10 @@ require 'yaml'
 require 'fileutils'
 
 domains = {
-  frontend: 'erec.dev',
-  backend:  'erec-backend.dev',
-  cpsfrontend: 'cps.dev',
-  cpsbackend: 'cps-backend.dev',
+  frontend: 'erec.test',
+  backend:  'erec-backend.test',
+  cpsfrontend: 'cps.test',
+  cpsbackend: 'cps-backend.test',
   phpmyadmin: 'phpMyAdmin'
 }
 
