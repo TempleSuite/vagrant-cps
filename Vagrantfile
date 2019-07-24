@@ -4,8 +4,6 @@ require 'fileutils'
 domains = {
   frontend: 'erec.test',
   backend:  'erec-backend.test',
-  cpsfrontend: 'cps.test',
-  cpsbackend: 'cps-backend.test',
   phpmyadmin: 'phpMyAdmin'
 }
 
@@ -28,7 +26,7 @@ end
 # vagrant configurate
 Vagrant.configure(2) do |config|
   # select the box
-  config.vm.box = 'ubuntu/trusty64'
+  config.vm.box = 'ubuntu/bionic64'
 
   # should we ask about box updates?
   config.vm.box_check_update = options['box_check_update']
@@ -57,7 +55,7 @@ Vagrant.configure(2) do |config|
 
   # sync: folder 'cps-yii2' (host machine) -> folder '/var/www/html' ( guest machine)
   # put your own path in vagrant-local.yml
-  config.vm.synced_folder options['path_to_cps'], '/var/www/html/cps', owner: 'vagrant', group: 'vagrant'
+  # config.vm.synced_folder options['path_to_cps'], '/var/www/html/cps', owner: 'vagrant', group: 'vagrant'
 
   # disable folder '/vagrant' (guest machine)
   config.vm.synced_folder '.', '/vagrant', disabled: true
@@ -76,5 +74,5 @@ Vagrant.configure(2) do |config|
   config.vm.provision 'shell', path: 'provision/always-as-root.sh', run: 'always'
 
   # post-install message (vagrant console)
-  config.vm.post_up_message = "Erec frontend URL: http://#{domains[:frontend]}\nBackend URL: http://#{domains[:backend]}, CPS Frontend Url: http://#{domains[:cpsfrontend]}\nBackend URL: http://#{domains[:cpsbackend]}"
+  config.vm.post_up_message = "Erec frontend URL: http://#{domains[:frontend]}\nBackend URL: http://#{domains[:backend]}"
 end
