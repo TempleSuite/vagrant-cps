@@ -2,8 +2,8 @@ require 'yaml'
 require 'fileutils'
 
 domains = {
-  frontend: 'erec.test',
-  backend:  'erec-backend.test',
+  frontend: 'cps.test',
+  backend:  'cps-backend.test',
   phpmyadmin: 'phpMyAdmin'
 }
 
@@ -19,7 +19,7 @@ options = YAML.load_file config[:local]
 
 # check github token
 if options['github_token'].nil? || options['github_token'].to_s.length != 40
-  puts "You must place REAL GitHub token into configuration:\n/yii2-app-advanced/vagrant/config/vagrant-local.yml"
+  puts "You must place REAL GitHub token into configuration:\n/vagrant-cps/config/vagrant-local.yml"
   exit
 end
 
@@ -49,13 +49,9 @@ Vagrant.configure(2) do |config|
   # network settings
   config.vm.network 'private_network', ip: options['ip']
 
-  # sync: folder 'erec-yii2' (host machine) -> folder '/var/www/html' (guest machine)
-  # put your own path where you see ./
-  config.vm.synced_folder options['path_to_erec'], '/var/www/html/erec', owner: 'vagrant', group: 'vagrant'
-
   # sync: folder 'cps-yii2' (host machine) -> folder '/var/www/html' ( guest machine)
   # put your own path in vagrant-local.yml
-  # config.vm.synced_folder options['path_to_cps'], '/var/www/html/cps', owner: 'vagrant', group: 'vagrant'
+   config.vm.synced_folder options['path_to_cps'], '/var/www/html/cps', owner: 'vagrant', group: 'vagrant'
 
   # disable folder '/vagrant' (guest machine)
   config.vm.synced_folder '.', '/vagrant', disabled: true
@@ -74,5 +70,5 @@ Vagrant.configure(2) do |config|
   config.vm.provision 'shell', path: 'provision/always-as-root.sh', run: 'always'
 
   # post-install message (vagrant console)
-  config.vm.post_up_message = "Erec frontend URL: http://#{domains[:frontend]}\nBackend URL: http://#{domains[:backend]}"
+  config.vm.post_up_message = "CPS frontend URL: http://#{domains[:frontend]}\nBackend URL: http://#{domains[:backend]}"
 end

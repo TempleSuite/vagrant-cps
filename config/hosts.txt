@@ -23,7 +23,7 @@
 # 	192.168.83.137 erec-backend.dev
 
 ## vagrant-hostmanager-start id: 32862378-d336-4d75-9298-eb48157c84a1
-192.168.83.137 erec.test
-192.168.83.137	erec-backend.test
+192.168.83.137 cps.test
+192.168.83.137	cps-backend.test
 ## vagrant-hostmanager-end
 

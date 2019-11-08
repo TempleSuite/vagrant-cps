@@ -10,7 +10,7 @@ timezone: US/Pacific
 box_check_update: false
 
 # Virtual machine name
-machine_name: erec
+machine_name: cps
 
 # Virtual machine IP
 ip: 192.168.83.137
@@ -20,9 +20,6 @@ cpus: 2
 
 # Virtual machine RAM
 memory: 2048
-
-#path to erec
-path_to_erec: /wherever/your/erec-yii2/folder/is
 
 #path to cps
 path_to_cps: /where/your/cps-yii2/folder/is
