@@ -5,7 +5,7 @@ This file will be your configuration.
 
 1. At the top, enter your own personal GitHub token.  If you do not have a token, you can generate one at your [github account settings](https://github.com/settings/tokens).  If you have one but have lost it, you can just generate a new one.
 2. Make sure the machine_name is "mais"
-3. Make sure your path_to_erec is an absolute url, for instance mine is `~/projects/erec-yii2`.  On a Windows machine it would be something like, `C:\Users\MyUser\Projects\erec-yii2`
+3. Make sure your path_to_cps is an absolute url, for instance mine is `~/projects/cps-yii2`.  On a Windows machine it would be something like, `C:\Users\MyUser\Projects\cps-yii2`
 
 ## SETUP
 
@@ -18,7 +18,7 @@ This file will be your configuration.
   - `vagrant halt`
   - `vagrant up`
 - Once it starts up successfully again, use `vagrant ssh` to connect to your vagrant box.
-- To be able to push to eRec's git repository, you need to set up your git username and email.
+- To be able to push to CPS's git repository, you need to set up your git username and email.
 
     ***Note: If you do not enter the same email and username from your github account, your commits will not link up to your github account.***
 
@@ -28,9 +28,9 @@ git config --global user.name "Your username"
 ```
 
 
-## ~/EREC
+## ~/CPS
 
-Make sure your .env file in the erec-yii2 folder has the database named "erec".
+Make sure your .env file in the erec-yii2 folder has the database named "cps".
 
 ## ~/VAGRANT
 
