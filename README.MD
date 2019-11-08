@@ -1,3 +1,10 @@
+##Installs
+Download and install the latest version of VirtualBox
+https://www.virtualbox.org/wiki/Downloads
+
+Download and install the latest version of Vagrant
+https://www.vagrantup.com/
+
 ## CONFIG
 
 Go to config/vagrant-local-example.yml and copy it to a file named config/vagrant-local.yml
