@@ -55,7 +55,7 @@ sed -i "s/#force_color_prompt=yes/force_color_prompt=yes/" /home/vagrant/.bashrc
 info install phpMyAdmin
 sudo mkdir /var/www/html/phpMyAdmin
 sudo chown vagrant:vagrant /var/www/html/phpMyAdmin
-tar -xvzf /var/www/html/erec/vagrant/phpMyAdmin/phpMyAdmin-4.9.0.1-english.tar.gz -C /var/www/html/phpMyAdmin
+tar -xvzf /var/www/html/cps/vagrant/phpMyAdmin/phpMyAdmin-4.9.0.1-english.tar.gz -C /var/www/html/phpMyAdmin
 mv /var/www/html/phpMyAdmin/phpMyAdmin-4.9.0.1-english/* /var/www/html/phpMyAdmin
 rm -R /var/www/html/phpMyAdmin/phpMyAdmin-4.9.0.1-english
 sudo chown -R vagrant:vagrant /var/www/html/phpMyAdmin
