@@ -51,7 +51,7 @@ apt-get install zip gzip git curl nginx mysql-server php7.1 php7.1-cli php7.1-co
 pecl install xdebug
 echo 'zend_extension="'$(find / -name 'xdebug.so')'"' >> /etc/php/7.1/fpm/php.ini
 echo 'xdebug.remote_enable = 1' >> /etc/php/7.1/fpm/php.ini
-echo 'xdebug.remote_autostart = 0' >> /etc/php/7.1/fpm/php.ini
+echo 'xdebug.remote_autostart = 1' >> /etc/php/7.1/fpm/php.ini
 echo 'xdebug.remote_connect_back=1' >> /etc/php/7.1/fpm/php.ini
 #echo 'xdebug.default_enable = 1' >> /etc/php/7.1/fpm/php.ini
 #echo 'xdebug.idekey = "netbeans-xdebug"' >> /etc/php/7.1/php.ini
@@ -84,8 +84,8 @@ ln -s /var/www/html/cps/vagrant/nginx/app.conf /etc/nginx/sites-enabled/cps.conf
 echo "Done!"
 
 info "Initailize databases for MySQL"
-mysql -uroot <<< "CREATE DATABASE IF NOT EXISTS cps"
-mysql -uroot <<< "CREATE DATABASE IF NOT EXISTS cps_test"
+mysql -uroot -pmypass <<< "CREATE DATABASE IF NOT EXISTS cps"
+mysql -uroot -pmypass <<< "CREATE DATABASE IF NOT EXISTS cps_test"
 
 info "Install composer"
 curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
