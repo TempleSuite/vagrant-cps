@@ -32,7 +32,7 @@ composer global require "codeception/codeception=2.0.*" "codeception/specify=*" 
 echo 'export PATH=/home/vagrant/.config/composer/vendor/bin:$PATH' | tee -a /home/vagrant/.profile
 
 info "Cloning CPS project from github"
-git clone https://${github_token}@github.com/TempleSuite/cps-yii2.git /var/www/html/cps
+git clone -b dev https://${github_token}@github.com/TempleSuite/cps-yii2.git /var/www/html/cps
 info "Done!"
 
 info "CPS"
@@ -45,6 +45,7 @@ info "Init CPS yii2 project"
 
 info "Apply migrations"
 php yii migrate/up <<< "yes"
+php yii migrate --migrationPath=@vendor/maissoftware/mm-yii2/src/migrations <<< "yes"
 
 info "Create bash-aliases 'cps' for vagrant user"
 echo 'alias cps="cd /var/www/html/cps"' | tee /home/vagrant/.bash_aliases

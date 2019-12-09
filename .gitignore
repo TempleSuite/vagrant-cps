@@ -11,3 +11,4 @@
 
 ubuntu-bionic-18.04-cloudimg-console.log
 .vscode/
+config/vagrant-local.example.yml

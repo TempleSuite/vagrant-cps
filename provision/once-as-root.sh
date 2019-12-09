@@ -66,6 +66,8 @@ npm install -g bower
 
 info "Configure MySQL"
 sed -i "s/.*bind-address.*/bind-address = 0.0.0.0/" /etc/mysql/my.cnf
+echo '[mysqld]' >> /etc/mysql/my.cnf
+echo 'sql_mode="NO_ENGINE_SUBSTITUTION"' >> /etc/mysql/my.cnf
 echo "Done!"
 
 info "Configure PHP-FPM"
@@ -93,3 +95,5 @@ curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin
 #info "Install Ruby-SASS"
 #sudo apt-get -y install ruby2.0 ruby2.0-dev
 #sudo gem2.0 install sass
+
+sudo apt install ruby-sass <<< yes
