@@ -51,7 +51,8 @@ Vagrant.configure(2) do |config|
 
   # sync: folder 'cps-yii2' (host machine) -> folder '/var/www/html' ( guest machine)
   # put your own path in vagrant-local.yml
-   config.vm.synced_folder options['path_to_cps'], '/var/www/html/cps', owner: 'vagrant', group: 'vagrant'
+  config.vm.synced_folder options['path_to_cps'], '/var/www/html/cps', owner: 'vagrant', group: 'vagrant'
+  # config.vm.synced_folder options['path_to_cps'] + '/frontend/web/webapp', '/var/www/html/cps/frontend/web/webapp', owner: 'vagrant', group: 'vagrant'
 
   # disable folder '/vagrant' (guest machine)
   config.vm.synced_folder '.', '/vagrant', disabled: true
