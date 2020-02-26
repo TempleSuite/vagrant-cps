@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 #== Import script args ==
 
 github_token=$(echo "$1")
@@ -41,11 +43,12 @@ cd /var/www/html/cps
 composer --no-progress --prefer-dist install
 
 info "Init CPS yii2 project"
+chmod +x ./init
 ./init --env=Development --overwrite=n
 
 info "Apply migrations"
-php yii migrate/up <<< "yes"
-php yii migrate --migrationPath=@vendor/maissoftware/mm-yii2/src/migrations <<< "yes"
+php yii migrate/up <<< "yes" || true
+php yii migrate --migrationPath=@vendor/maissoftware/mm-yii2/src/migrations <<< "yes" || true
 
 info "Create bash-aliases 'cps' for vagrant user"
 echo 'alias cps="cd /var/www/html/cps"' | tee /home/vagrant/.bash_aliases

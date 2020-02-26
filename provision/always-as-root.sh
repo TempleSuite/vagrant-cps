@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 #== Bash helpers ==
 
 function info {
