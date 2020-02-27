@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 #== Import script args ==
 
 timezone=$(echo "$1")
@@ -25,8 +27,8 @@ echo '/swapfile none swap defaults 0 0' >> /etc/fstab
 
 info "Configure locales"
 update-locale LC_ALL="C"
-dpkg-reconfigure locales
-5106771641
+dpkg-reconfigure --frontend noninteractive locales
+
 info "Configure timezone"
 echo ${timezone} | tee /etc/timezone
 dpkg-reconfigure --frontend noninteractive tzdata
@@ -97,3 +99,10 @@ curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin
 #sudo gem2.0 install sass
 
 sudo apt install ruby-sass <<< yes
+
+if [ ! -d "/var/www/html/cps" ]; then
+  info "Using CPS without shared folder"
+  echo "WARNING: Unpublished changes will be lost if you destroy the VM"
+  mkdir /var/www/html/cps
+  chown vagrant.vagrant /var/www/html/cps
+fi
