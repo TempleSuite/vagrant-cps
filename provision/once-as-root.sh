@@ -92,7 +92,7 @@ mysql -uroot -pmypass <<< "CREATE DATABASE IF NOT EXISTS cps"
 mysql -uroot -pmypass <<< "CREATE DATABASE IF NOT EXISTS cps_test"
 
 info "Install composer"
-curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer --version 1.10.17
+curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer --version=1.10.17
 
 #info "Install Ruby-SASS"
 #sudo apt-get -y install ruby2.0 ruby2.0-dev
