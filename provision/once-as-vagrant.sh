@@ -22,9 +22,9 @@ mysqladmin -u root -pmypass password "adminuser"
 
 info "Provision-script user: `whoami`"
 
-info "Configure composer"
-composer config --global github-oauth.github.com ${github_token}
-echo "Done!"
+#info "Configure composer"
+#composer config --global github-oauth.github.com ${github_token}
+#echo "Done!"
 
 info "Install plugins for composer"
 composer global require "fxp/composer-asset-plugin:^1.2.0" --no-progress
