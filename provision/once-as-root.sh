@@ -47,9 +47,12 @@ apt-get update
 apt-get upgrade -y
 
 info "Install additional LAMP software"
+apt-get install software-properties-common
 add-apt-repository ppa:ondrej/php
 apt-get update
-apt-get install zip gzip git curl nginx mysql-server php7.1 php7.1-cli php7.1-common php7.1-mysql php7.1-fpm php7.1-curl php7.1-gd php7.1-bz2 php7.1-mcrypt php7.1-json php7.1-dev php7.1-tidy php7.1-mbstring php7.1-bcmath php7.1-intl php7.1-xsl php-xml php-redis php-memcached php-pear <<< "y"
+apt-get install -y php7.1
+sudo update-alternatives --set php /usr/bin/php7.1
+apt-get install zip gzip git curl nginx mysql-server php7.1-cli php7.1-common php7.1-mysql php7.1-fpm php7.1-curl php7.1-gd php7.1-bz2 php7.1-mcrypt php7.1-json php7.1-dev php7.1-tidy php7.1-mbstring php7.1-bcmath php7.1-intl php7.1-xsl php-xml php-redis php-memcached php-pear <<< "y"
 pecl install xdebug-2.9.8
 echo 'zend_extension="'$(find / -name 'xdebug.so')'"' >> /etc/php/7.1/fpm/php.ini
 echo 'xdebug.remote_enable = 1' >> /etc/php/7.1/fpm/php.ini
